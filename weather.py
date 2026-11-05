@@ -31,3 +31,8 @@ def get_weather(latitude, longitude):
 
     weather_result = weather_data["current"]
     return weather_result["temperature_2m"], weather_result["weather_code"], weather_result["wind_speed_10m"]
+
+if __name__ == "__main__":
+    latitude, longitude = get_coordinates("Bad Dürkheim")
+    temperature, weather_code, wind_speed = get_weather(latitude, longitude)
+    print(f"Temperatur: {temperature} °C, Wind: {wind_speed} km/h, Code: {weather_code}")
