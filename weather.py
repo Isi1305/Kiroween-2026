@@ -1,6 +1,6 @@
 import requests
 
-# Get the weather data from the OpenWeatherMap API
+# Get the weather data from the Open-Meteo API
 url = "https://geocoding-api.open-meteo.com/v1/search" 
 params = {
     "name": "Bad Dürkheim",
