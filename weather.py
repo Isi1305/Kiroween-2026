@@ -40,3 +40,4 @@ if __name__ == "__main__":
 
 
 description = weather_descriptions[weather_code]
+print(f"Weather description: {description}")
