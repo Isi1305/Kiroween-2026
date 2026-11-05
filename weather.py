@@ -1,4 +1,5 @@
 import requests
+from weather_codes import weather_descriptions
 
 def get_coordinates(location):
     """Get the coordinates (latitude and longitude) for a given location using the Open-Meteo API."""
@@ -36,3 +37,6 @@ if __name__ == "__main__":
     latitude, longitude = get_coordinates("Bad Dürkheim")
     temperature, weather_code, wind_speed = get_weather(latitude, longitude)
     print(f"Temperatur: {temperature} °C, Wind: {wind_speed} km/h, Code: {weather_code}")
+
+
+description = weather_descriptions[weather_code]
