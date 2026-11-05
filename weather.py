@@ -39,5 +39,5 @@ if __name__ == "__main__":
     print(f"Temperatur: {temperature} °C, Wind: {wind_speed} km/h, Code: {weather_code}")
 
 
-description = weather_descriptions[weather_code]
-print(f"Weather description: {description}")
+    description = weather_descriptions[weather_code]
+    print(f"Weather description: {description}")
