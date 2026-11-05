@@ -8,8 +8,8 @@ params = {
     "language": "de"
 }
 
-response = requests.get(url, params=params) # Send a GET request to the API with the specified parameters.
-data = response.json() # Answer in JSON format and store it in the variable 'data'.
+response = requests.get(url, params=params) # Send a GET request to the API with the specified parameters
+data = response.json() # Answer in JSON format and store it in the variable 'data'
 
 print(data["results"][0]["latitude"]) # Print the latitude of the location
 print(data["results"][0]["longitude"]) # Print the logitude of the location
@@ -28,4 +28,10 @@ forecast_params = {
 forecast_response = requests.get(url, params=forecast_params)
 weather_data = forecast_response.json()
 
-print(weather_data)
+print(weather_data["current"]) # Print the current weather data
+
+temperature = weather_data["current"]["temperature_2m"] # Store the current temperature in a variable
+weather_code = weather_data["current"]["weather_code"] # Store the current weather code in a variable
+wind_speed = weather_data["current"]["wind_speed_10m"] # Store the current wind speed in a variable
+
+print(f"Temperatur: {temperature} °C, Wind: {wind_speed} km/h, Code: {weather_code}")
