@@ -15,7 +15,7 @@ async def make_speech(text, filename="warning.mp3"):
     )
     await communicate.save(filename)
 
-st.title("Cursed Weather Report")
+st.title("Weather Report")
 city = st.text_input("Enter a town")
 
 if city:
