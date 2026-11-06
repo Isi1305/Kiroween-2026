@@ -26,8 +26,29 @@ for model in models:
     try:
         response = client.models.generate_content(
             model=model, 
-            contents=f"Write a short horror story (3-4 sentences) set in a town where the current weather is: {description}, {temperature}°C, wind {wind_speed} km/h. Make the weather central to the horror. It can be psychological, or supernatural horror but not gory. It should not be suitable for a general audience but a mature one."
+            contents=f"""You are a screenwriter specializing in atmospheric, high-concept disaster horror movies.
+                        Create a short, terrifying horror movie scene (4–6 sentences) based on the CURRENT WEATHER CONDITIONS:
+                        - Weather: {description}
+                        - Temperature: {temperature}°C
+                        - Wind speed: {wind_speed} km/h
+
+                        CORE RULES:
+                        1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
+                        2. Take inspiration from horror emergency alerts/broadcastS.
+                        3. Introduce a terrifying phenomenon, an unexplained event or a survival threat directly connected to the weather.
+                        4. Include one disturbing survival rule that people must follow to stay alive.
+                        5. Build suspense, dread and a sense of impending catastrophe. Make the reader feel that something terrible is happening RIGHT NOW.
+                        6. Avoid generic ghosts, serial killers or unrelated supernatural events.
+                        7. No gore. Psychological and supernatural horror are welcome.
+                        8. Make every story original, cinematic, immersive and suitable for a mature audience.
+                        9. It should act as weather report DO NOT bring characters into it. 
+                        10. The weather report should be the horror
+
+                        IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
+
+                        Write as if this were a scene from a horror movie, not a traditional short story."""
         )
+        
         story = response.text
         break # if the story is generated successfully, break the loop
     except Exception as e:
