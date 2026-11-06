@@ -18,7 +18,6 @@ models = [
     "gemini-flash-latest",
     "gemini-3.5-flash",
     "gemini-3.6-flash",
-    "gemini-2.5-flash",
     "gemini-flash-lite-latest",
 ]
 story = None # try every model in the list until one works
@@ -34,7 +33,7 @@ for model in models:
 
                         CORE RULES:
                         1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
-                        2. Take inspiration from horror emergency alerts/broadcastS.
+                        2. Take inspiration from horror emergency alerts/broadcasts.
                         3. Introduce a terrifying phenomenon, an unexplained event or a survival threat directly connected to the weather.
                         4. Include one disturbing survival rule that people must follow to stay alive.
                         5. Build suspense, dread and a sense of impending catastrophe. Make the reader feel that something terrible is happening RIGHT NOW.
@@ -43,6 +42,7 @@ for model in models:
                         8. Make every story original, cinematic, immersive and suitable for a mature audience.
                         9. It should act as weather report DO NOT bring characters into it. 
                         10. The weather report should be the horror
+                        11. **CIVIL DEFENSE EMERGENCY:** should be at the start.
 
                         IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
