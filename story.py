@@ -42,7 +42,7 @@ for model in models:
                         8. Make every story original, cinematic, immersive and suitable for a mature audience.
                         9. It should act as weather report DO NOT bring characters into it. 
                         10. The weather report should be the horror
-                        11. **CIVIL DEFENSE EMERGENCY:** should be at the start.
+                        11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
 
                         IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
