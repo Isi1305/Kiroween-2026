@@ -6,7 +6,13 @@ import asyncio
 import edge_tts
 
 async def make_speech(text, filename="warning.mp3"):
-    communicate = edge_tts.Communicate(text, voice="en-US-ChristopherNeural")
+    communicate = edge_tts.Communicate(
+        text,
+        voice="en-US-ChristopherNeural",
+        rate="-10%",      
+        pitch="-10Hz",    
+        volume="+0%"
+    )
     await communicate.save(filename)
 
 st.title("Cursed Weather Report")
