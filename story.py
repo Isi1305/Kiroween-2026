@@ -11,10 +11,10 @@ client = genai.Client(api_key=api_key) # Create a client object for the Gemini A
 
 def generate_story(description, temperature, wind_speed):
     models = [
+        "gemini-flash-lite-latest",
         "gemini-flash-latest",
         "gemini-3.5-flash",
         "gemini-3.6-flash",
-        "gemini-flash-lite-latest",
     ]
     story = None # try every model in the list until one works
     for model in models:
