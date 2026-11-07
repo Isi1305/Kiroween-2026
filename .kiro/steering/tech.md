@@ -18,6 +18,9 @@ Use `python -m pip ...` instead of plain `pip` (PATH problems on this machine).
 - Functions have docstrings; helper functions live at the top of the file.
 - Logic and UI are separated: `weather.py` and `story.py` contain no Streamlit code.
 - The UI (including the `st.dialog` pop-up) lives in `app.py`.
+- All audio logic lives in `audio.py` (`make_speech`, `build_broadcast`).
+- `make_alarm.py` is a one-time script that generates `assets/alarm.wav`; the app only reads it.
+- Static files (background image, alarm sound) live in `assets/`.
 
 ## Security
 - The Gemini key lives only in `.env` (GEMINI_API_KEY). Never commit it or hard-code it.
@@ -30,3 +33,8 @@ Use `python -m pip ...` instead of plain `pip` (PATH problems on this machine).
   never the generated `st-emotion-cache-*` classes.
 - Streamlit reruns the whole script on every interaction.
 - Do not start the app while a conda install is running.
+- `pydub` needs `ffmpeg` on the PATH to read MP3 files (install with
+  `conda install -c conda-forge ffmpeg`). Starting Python by full path without activating
+  conda gives `WinError 2`: start from the Anaconda Prompt or add `...\Library\bin` to PATH.
+- On Python 3.13+ `pydub` additionally needs the `audioop-lts` package.
+- If there is no sound, check the headphones/output device first.
