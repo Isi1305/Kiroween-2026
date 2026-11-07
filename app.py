@@ -18,6 +18,7 @@ async def make_speech(text, filename="warning.mp3"):
 
 @st.dialog("CIVIL DEFENSE EMERGENCY BROADCAST") # pop up window
 def show_warning(description, temperature, wind_speed):
+    """The warning is shown on screen with audio playing."""
     with st.spinner("RECEIVING TRANSMISSION…"):
         story = generate_story(description, temperature, wind_speed)
         asyncio.run(make_speech(story)) # make the audio
