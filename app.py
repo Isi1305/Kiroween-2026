@@ -47,7 +47,7 @@ def set_background(image_path):
     unsafe_allow_html=True,
 )
 
-set_background("images/ghost.jpg")
+set_background("assets/ghost.jpg")
 
 # Voice settings for the TTS
 async def make_speech(text, filename="warning.mp3"):
