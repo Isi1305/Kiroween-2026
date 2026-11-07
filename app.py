@@ -5,6 +5,7 @@ from story import generate_story
 import asyncio
 import edge_tts
 import base64
+from audio import make_speech, build_broadcast
 
 def set_background(image_path):
     """Settings for the background."""
@@ -17,7 +18,7 @@ def set_background(image_path):
         .stApp {{
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url("data:image/png;base64,{encoded}");
+                url("data:image/jpg;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -32,7 +33,6 @@ def set_background(image_path):
     """
     <style>
     div[role="dialog"] {
-        [data-testid="stAudio"] { display: none; }
         background-color: #000;
         border: 2px solid #d00000;
         background-image:
@@ -41,7 +41,7 @@ def set_background(image_path):
         background-size: 100% 18px, 100% 18px;
         background-position: top, bottom;
         background-repeat: no-repeat;
-    }
+    } [data-testid="stAudio"] { display: none; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -49,26 +49,16 @@ def set_background(image_path):
 
 set_background("assets/ghost.jpg")
 
-# Voice settings for the TTS
-async def make_speech(text, filename="warning.mp3"):
-    communicate = edge_tts.Communicate(
-        text,
-        voice="en-US-ChristopherNeural",
-        rate="-10%",
-        pitch="-10Hz",
-        volume="+0%"
-    )
-    await communicate.save(filename)
-
 @st.dialog("CIVIL DEFENSE EMERGENCY BROADCAST") # pop up window
 def show_warning(description, temperature, wind_speed):
     """The warning is shown on screen with audio playing."""
     with st.spinner("RECEIVING TRANSMISSION…"):
         story = generate_story(description, temperature, wind_speed)
         asyncio.run(make_speech(story)) # make the audio
+        build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
 
     st.write(story)
-    st.audio("warning.mp3", autoplay=True) # Autoplays the audio
+    st.audio("broadcast.mp3", autoplay=True) # Autoplays the audio
 
 st.title("Weather Report")
 city = st.text_input("Enter a town") 

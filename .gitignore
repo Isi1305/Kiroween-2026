@@ -1,4 +1,4 @@
 .env
 __pycache__/
-warning.mp3
+*.mp3
 start.bat
