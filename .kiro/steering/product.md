@@ -13,11 +13,12 @@ The weather itself is the monster; the report is the horror. No characters.
 ## The stitched-together parts (Frankenstein idea)
 - Real weather data (Open-Meteo: geocoding + current weather)
 - Generative text (Google Gemini) written as an emergency broadcast
-- Synthetic speech (Edge-TTS), planned: alarm tone and distorted radio effect
+- Synthetic speech (Edge-TTS) framed by a generated alarm tone (853 Hz + 960 Hz sine waves,
+  built with numpy) before and after the voice. Planned: distorted radio effect
 - Found imagery as haunted background (frosted glass with hands)
 
 ## Design direction
-- Dark, foggy background with a darkened photo (images/ghost.jpg)
+- Dark, foggy background with a darkened photo (assets/ghost.jpg)
 - The warning pop-up is the only warm color: red/black hazard stripes, like a real alert
 - The weather tiles (temperature, wind, conditions) sit underneath the pop-up
 - Planned: old CRT monitor look (scanlines, flicker), alarm icon, large "EMERGENCY" title
