@@ -4,6 +4,29 @@ from weather_codes import weather_descriptions
 from story import generate_story
 import asyncio
 import edge_tts
+import base64
+
+def set_background(image_path):
+    with open(image_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+set_background("images/ghost.jpg")
 
 # Voice settings for the TTS
 async def make_speech(text, filename="warning.mp3"):
@@ -35,3 +58,8 @@ if city:
     description = weather_descriptions[weather_code]
 
     show_warning(description, temperature, wind_speed)
+
+    col1, col2, col3 = st.columns(3) # three columns next to each other
+    col1.metric("Temperature", f"{temperature} °C")
+    col2.metric("Wind", f"{wind_speed} km/h")
+    col3.metric("Weather", f"{description}")

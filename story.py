@@ -32,7 +32,7 @@ def generate_story(description, temperature, wind_speed):
                             1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
                             2. Take inspiration from horror emergency alerts/broadcasts.
                             3. Introduce a terrifying phenomenon, an unexplained event or a survival threat directly connected to the weather.
-                            4. Include one disturbing survival rule that people must follow to stay alive but STAY REALISTIC.
+                            4. Include one disturbing survival rule that people must follow to stay alive but STAY REALISTIC to what a person can do.
                             5. Build suspense, dread and a sense of impending catastrophe. Make the reader feel that something terrible is happening RIGHT NOW.
                             6. Avoid generic ghosts, serial killers or unrelated supernatural events.
                             7. No gore. Psychological and supernatural horror are welcome.
@@ -40,6 +40,7 @@ def generate_story(description, temperature, wind_speed):
                             9. It should act as weather report DO NOT bring characters into it. 
                             10. The weather report should be the horror.
                             11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
+                            12. MAXIMUM 100 words.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
