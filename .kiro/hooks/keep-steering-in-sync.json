@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Keep steering in sync",
+      "trigger": "PostFileSave",
+      "matcher": "\\.py$",
+      "action": {
+        "type": "agent",
+        "prompt": "A Python file was just saved. If the change adds, renames or moves a module, changes the run command, or adds a dependency, check whether the files in .kiro/steering still describe the project correctly (file structure, stack, gotchas). If something is outdated, tell the developer exactly which line and propose a small update. Do not edit the steering files without asking first."
+      }
+    }
+  ]
+}
