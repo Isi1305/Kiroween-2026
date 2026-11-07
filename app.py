@@ -7,6 +7,7 @@ import edge_tts
 import base64
 
 def set_background(image_path):
+    """Settings for the background."""
     with open(image_path, "rb") as f:
         encoded = base64.b64encode(f.read()).decode()
 
@@ -25,6 +26,26 @@ def set_background(image_path):
         """,
         unsafe_allow_html=True,
     )
+
+    # extras for the emergency warning
+    st.markdown(
+    """
+    <style>
+    div[role="dialog"] {
+        [data-testid="stAudio"] { display: none; }
+        background-color: #000;
+        border: 2px solid #d00000;
+        background-image:
+            repeating-linear-gradient(45deg, #d00000 0 14px, #000 14px 28px),
+            repeating-linear-gradient(45deg, #d00000 0 14px, #000 14px 28px);
+        background-size: 100% 18px, 100% 18px;
+        background-position: top, bottom;
+        background-repeat: no-repeat;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 set_background("images/ghost.jpg")
 
