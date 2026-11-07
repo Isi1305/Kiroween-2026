@@ -42,3 +42,16 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [ ] 7.2 Confirm the broadcast mentions the real town and keeps all numbers exact
   - [ ] 7.3 Confirm the fiction notice is visible in the pop-up without scrolling
   - _Requirements: all_
+
+- [ ] 8. Optional: try property-based testing (PBT)
+  The developer wants to try this after tasks 1-7 are done. It is an experiment, not a requirement.
+  - [ ] 8.1 Install `pytest` and `hypothesis`
+  - [ ] 8.2 Move the fact-line helper into a pure function (no network) so it can be tested
+  - [ ] 8.3 Derive properties from the acceptance criteria, for example:
+    - missing fields never produce a line and never produce the text `None` (Requirement 2.1)
+    - every number that is present appears unchanged in the output (Requirement 3.2)
+    - the output is always text, whatever the input (Requirement 2.1)
+    - every weather code from `weather_descriptions` returns a non-empty description
+  - [ ] 8.4 Run the tests; write down anything unexpected that Hypothesis finds
+  - [ ] 8.5 Check whether Kiro's built-in PBT feature (spec requirements to properties) is available in Kiro Web, and report honestly in the write-up either way
+  - _Requirements: 2.1, 3.2, 5.4_
