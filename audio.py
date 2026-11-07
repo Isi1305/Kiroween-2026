@@ -16,9 +16,9 @@ async def make_speech(text, filename="warning.mp3"):
 def build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3"):
     """Put the alarm tone before and after the voice."""
     tone = AudioSegment.from_file("assets/alarm.wav")
-    voice = AudioSegment.from_file("warning.mp3")
+    voice = AudioSegment.from_file(voice_path)
 
     final = tone + voice + tone
-    final.export("test_final.mp3", format="mp3")
+    final.export(output_path, format="mp3")
 
     return output_path

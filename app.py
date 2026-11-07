@@ -55,10 +55,11 @@ def show_warning(description, temperature, wind_speed):
     with st.spinner("RECEIVING TRANSMISSION…"):
         story = generate_story(description, temperature, wind_speed)
         asyncio.run(make_speech(story)) # make the audio
-        build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
+        broadcast = build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
+
 
     st.write(story)
-    st.audio("broadcast.mp3", autoplay=True) # Autoplays the audio
+    st.audio(broadcast, autoplay=True) # Autoplays the audio
 
 st.title("Weather Report")
 city = st.text_input("Enter a town") 
