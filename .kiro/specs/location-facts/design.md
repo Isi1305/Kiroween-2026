@@ -23,13 +23,22 @@ user input (town)
   if nothing was found. Request uses `language="en"`.
 - Design decision: return the whole result dict (flexible) instead of a longer tuple
   (every caller would have to unpack all values).
-- `get_weather` stays as it is.
+- `get_weather` requests up to three more `current` values (see Requirement 5).
+  Design decision to make before coding: `get_weather` currently returns a tuple of three
+  values. With six values a tuple becomes error-prone, so return a **dict** with the same
+  reasoning as for `get_location`. This changes the call in `app.py` and the parameters of
+  `show_warning` and `generate_story` (they receive the dict instead of single numbers).
+  Missing values are simply absent from the dict.
 
 ### app.py
 - Call `get_location(city)`. IF the result is `None`, show `st.warning(...)` and stop.
 - Read `latitude` / `longitude` from the dict and call `get_weather`.
 - Pass `location` into `show_warning` and on to `generate_story`.
 - Add a small credit line for Open-Meteo.
+- Show the extra weather values as additional tiles in a second row of `st.columns`;
+  only create a tile when the value exists.
+- At the bottom of the pop-up, show the fiction notice (`st.caption`) so it is visible without
+  scrolling and does not disturb the red/black look.
 
 ### story.py
 - `generate_story` gets a fourth parameter `location`.

@@ -10,6 +10,11 @@ It also fixes two weaknesses found while planning:
 - an unknown town crashes the app (`data["results"][0]` raises an error),
 - the geocoding language is German while the app and the broadcast are English.
 
+The spec was extended on 7 Nov 2026 with two further goals, so the app is honestly useful as a
+small weather dashboard and clearly presented as fiction:
+- a few more real weather values, shown as tiles and woven into the broadcast,
+- a visible notice that the broadcast is fictional entertainment.
+
 ## Requirements
 
 ### Requirement 1: Retrieve location facts
@@ -50,6 +55,33 @@ it was written for me.
    location data.
 2. THE README SHALL repeat the credit.
 
+### Requirement 5: A few more real weather values
+**User story:** As a user, I want the dashboard to show a bit more than temperature and wind,
+so that it is useful on its own.
+
+#### Acceptance criteria
+1. WHEN the weather is requested, THE app SHALL additionally retrieve up to three more values
+   from the same Open-Meteo request. Candidates: relative humidity, feels-like temperature,
+   precipitation. The exact API variable names SHALL be checked in the Open-Meteo documentation.
+2. THE app SHALL show each additional value as a tile next to the existing tiles.
+3. IF a value is missing in the response, THEN THE app SHALL leave that tile out and continue.
+4. WHEN the story prompt is built, THE story generator SHALL include the additional values and
+   keep their numbers exact.
+5. THE app SHALL NOT add more than three additional values (scope limit).
+
+### Requirement 6: Fiction notice
+**User story:** As a viewer, I must not mistake the broadcast for a real emergency alert.
+
+The broadcast imitates an official civil-defense message and contains the real weather data of
+a real town. A clear notice avoids confusion and makes the project responsible.
+
+#### Acceptance criteria
+1. THE pop-up SHALL show the notice "Fictional entertainment, not a real alert" in readable
+   text, visible without scrolling.
+2. THE app SHALL NOT use logos or names of real authorities.
+3. THE README and the project description SHALL state that the broadcasts are fictional.
+
 ## Out of scope
 - Wikipedia text about the town (separate future spec).
 - Automatic location detection.
+- Forecasts, hourly data, sunrise/sunset (possible later, not part of this spec).

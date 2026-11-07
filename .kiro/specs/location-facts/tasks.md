@@ -25,7 +25,20 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [ ] 4.2 Add the credit to the README when it exists
   - _Requirements: 4.1, 4.2_
 
-- [ ] 5. Check it manually
-  - [ ] 5.1 Normal town, town without population, nonsense input, special characters
-  - [ ] 5.2 Confirm the broadcast mentions the real town and keeps the numbers exact
+- [ ] 5. A few more real weather values
+  - [ ] 5.1 Look up the exact Open-Meteo variable names (humidity, feels-like, precipitation)
+  - [ ] 5.2 Decide: return a dict from `get_weather` and update the callers accordingly
+  - [ ] 5.3 Request the extra values and show them as tiles; skip missing ones
+  - [ ] 5.4 Add the values to the prompt, numbers kept exact
+  - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
+
+- [ ] 6. Fiction notice
+  - [ ] 6.1 Add "Fictional entertainment, not a real alert" at the bottom of the pop-up
+  - [ ] 6.2 Add the same statement to the README and the project description later
+  - _Requirements: 6.1, 6.2, 6.3_
+
+- [ ] 7. Check it manually
+  - [ ] 7.1 Normal town, town without population, nonsense input, special characters
+  - [ ] 7.2 Confirm the broadcast mentions the real town and keeps all numbers exact
+  - [ ] 7.3 Confirm the fiction notice is visible in the pop-up without scrolling
   - _Requirements: all_
