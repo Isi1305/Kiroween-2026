@@ -57,7 +57,7 @@ def show_warning(description, temperature, wind_speed, location):
         asyncio.run(make_speech(story)) # make the audio
         broadcast = build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
 
-
+    st.caption("Fictional entertainment, not a real alert")
     st.write(story)
     st.audio(broadcast, autoplay=True) # Autoplays the audio
 

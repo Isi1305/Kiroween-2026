@@ -33,8 +33,7 @@ def build_location_lines(location):
     if elevation:
         lines.append(f"- Elevation: {elevation} m")
 
-    return" \
-    ".join(lines)
+    return chr(10).join(lines)
 
 def generate_story(description, temperature, wind_speed, location):
     """Generate a emergency broadcast weather report"""
@@ -55,7 +54,7 @@ def generate_story(description, temperature, wind_speed, location):
                             - Weather: {description}
                             - Temperature: {temperature}°C
                             - Wind speed: {wind_speed} km/h
-                            - Location: {location_lines}
+                            {location_lines}
 
                             CORE RULES:
                             1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
@@ -70,7 +69,7 @@ def generate_story(description, temperature, wind_speed, location):
                             10. The weather report should be the horror.
                             11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
                             12. MAXIMUM 100 words.
-                            13. (This is a work of fiction) at the end.
+                            13. Use the location facts naturally in the report and keep every number exact.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
@@ -93,4 +92,3 @@ if __name__ == "__main__":
     latitude, longitude = get_coordinates("Bad Dürkheim")
     temperature, weather_code, wind_speed = get_weather(latitude, longitude)
     description = weather_descriptions[weather_code]
-    print(generate_story(description, temperature, wind_speed))

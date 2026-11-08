@@ -17,7 +17,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
 - [ ] 3. Put the facts into the prompt in `story.py`
   - [x] 3.1 Add the `location` parameter to `generate_story`
   - [ ] 3.2 Write a helper that builds fact lines and skips missing values
-  - [ ] 3.3 Insert the fact lines and the new rule (use facts naturally, keep numbers exact)
+  - [x] 3.3 Insert the fact lines and the new rule (use facts naturally, keep numbers exact)
   - _Requirements: 2.1, 3.1, 3.2, 3.3_
 
 - [ ] 4. Credit the data source
@@ -33,7 +33,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
 
 - [ ] 6. Fiction notice
-  - [ ] 6.1 Add "Fictional entertainment, not a real alert" at the bottom of the pop-up
+  - [x] 6.1 Add "Fictional entertainment, not a real alert" at the bottom of the pop-up
   - [ ] 6.2 Add the same statement to the README and the project description later
   - _Requirements: 6.1, 6.2, 6.3_
 
