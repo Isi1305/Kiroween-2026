@@ -9,7 +9,7 @@ api_key = os.getenv("GEMINI_API_KEY") # get the value of the GEMINI_API_KEY
 
 client = genai.Client(api_key=api_key) # Create a client object for the Gemini API using the provided API key
 
-def generate_story(description, temperature, wind_speed):
+def generate_story(description, temperature, wind_speed, location):
     """Generate a emergency broadcast weather report"""
     models = [
         "gemini-flash-lite-latest",

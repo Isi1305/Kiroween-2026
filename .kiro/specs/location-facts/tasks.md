@@ -15,7 +15,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - _Requirements: 1.3, 2.2_
 
 - [ ] 3. Put the facts into the prompt in `story.py`
-  - [ ] 3.1 Add the `location` parameter to `generate_story`
+  - [x] 3.1 Add the `location` parameter to `generate_story`
   - [ ] 3.2 Write a helper that builds fact lines and skips missing values
   - [ ] 3.3 Insert the fact lines and the new rule (use facts naturally, keep numbers exact)
   - _Requirements: 2.1, 3.1, 3.2, 3.3_

@@ -50,10 +50,10 @@ def set_background(image_path):
 set_background("assets/ghost.jpg")
 
 @st.dialog("CIVIL DEFENSE EMERGENCY BROADCAST") # pop up window
-def show_warning(description, temperature, wind_speed):
+def show_warning(description, temperature, wind_speed, location):
     """The warning is shown on screen with audio playing."""
     with st.spinner("RECEIVING TRANSMISSION…"):
-        story = generate_story(description, temperature, wind_speed)
+        story = generate_story(description, temperature, wind_speed, location)
         asyncio.run(make_speech(story)) # make the audio
         broadcast = build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
 
