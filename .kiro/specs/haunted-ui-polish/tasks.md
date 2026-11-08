@@ -3,11 +3,11 @@
 The developer writes the code herself; Kiro explains concepts and reviews (see
 `.kiro/steering/working-style.md`). Order: function first, then beauty, one thing at a time.
 
-- [ ] 1. Old-loudspeaker voice (`audio.py`)
+- [x] 1. Old-loudspeaker voice (`audio.py`)
   - [x] 1.1 Write `radio_filter(voice)` with a high-pass and a low-pass filter
-  - [ ] 1.2 Add quiet white noise with numpy and overlay it
+  - [x] 1.2 Add quiet white noise with numpy and overlay it
   - [x] 1.3 Use it in `build_broadcast` for the voice only, with a `try/except` fallback
-  - [ ] 1.4 Tune cut-offs and noise level by ear; check the words stay clear
+  - [x] 1.4 Tune cut-offs and noise level by ear; check the words stay clear
   - _Requirements: 4.1, 4.2, 4.3, 4.4_
 
 - [ ] 2. CRT look behind the pop-up (`app.py`)
