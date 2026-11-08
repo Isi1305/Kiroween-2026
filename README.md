@@ -17,8 +17,8 @@ Features
 
 How to run locally: Python, pip install -r requirements.txt, ffmpeg, .env with GEMINI_API_KEY, streamlit run app.py or python -m streamlit run app.py.
 
-Credits & licenses: Open-Meteo (CC BY 4.0, not commercial) Weather and location data by Open-Meteo.com (CC BY 4.0). Data is transformed into a fictional story. [Open-Meteo.com](https://open-meteo.com/), 
+Credits & licenses: Open-Meteo (CC BY 4.0, free for non-commercial use only) Weather and location data by Open-Meteo.com (CC BY 4.0). Data is transformed into a fictional story. [Open-Meteo.com](https://open-meteo.com/), 
 Pixabay-picture by StockSnap (https://pixabay.com/de/photos/schwarz-und-weiß-unheimlich-geist-2603731/), 
 AGPL-3.0
 
-Built with Kiro: .kiro/ Steering, Specs and a Hook. No Kiro IDE due to already having a set up IDE for Python.
+Built with Kiro Web: .kiro/ Steering, Specs and a Hook. No Kiro IDE due to already having a set up IDE for Python.
