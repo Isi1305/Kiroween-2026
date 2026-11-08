@@ -61,11 +61,9 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
         "gemini-flash-lite-latest"
         "gemini-3.5-flash-lite",
         "gemini-flash-latest",
-        "gemini-2-flash",
-        "gemini-2-flash-lite",
-        "gemini-2.5-flash",
         "gemini-3.5-flash",
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.7-flash",
     ]
     story = None # try every model in the list until one works
     for model in models:
@@ -108,10 +106,7 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
             print(f"Error with model {model}: {e}")
             continue # if the model fails, try the next one
 
-    if story is None:
-        return "Every model is currently down. Please try again later."
-    else:
-        return story
+    return story
 
 
 if __name__ == "__main__":

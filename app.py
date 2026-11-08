@@ -53,7 +53,12 @@ set_background("assets/ghost.jpg")
 def show_warning(description, temperature, wind_speed, location, weather_result):
     """The warning is shown on screen with audio playing."""
     with st.spinner("RECEIVING TRANSMISSION…"):
-        story = generate_story(description, temperature, wind_speed, location, weather_result)
+        try:
+            story = cached_story(description, temperature, wind_speed, location, weather_result)
+        except RuntimeError:
+            st.warning("Every model is currently down. Please try again later.")
+            return
+        
         asyncio.run(make_speech(story)) # make the audio
         broadcast = build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
 
@@ -64,6 +69,11 @@ def show_warning(description, temperature, wind_speed, location, weather_result)
 st.title("Weather Report")
 city = st.text_input("Enter a town") 
 st.caption("Weather and location data by Open-Meteo.com (CC BY 4.0). Data is transformed into a fictional story. [Open-Meteo.com](https://open-meteo.com/)")
+
+@st.cache_data(ttl=900)
+def cached_story(description, temperature, wind_speed, location, weather_result):
+    """Returns the story text, or None if every model failed."""
+    return generate_story(description, temperature, wind_speed, location, weather_result)
 
 if city:
     location = get_location(city)
