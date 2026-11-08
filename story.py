@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from google import genai
-from weather import get_coordinates, get_weather
+from weather import get_coordinates, get_weather, get_location
 from weather_codes import weather_descriptions
 
 load_dotenv() # read .env file
@@ -9,8 +9,36 @@ api_key = os.getenv("GEMINI_API_KEY") # get the value of the GEMINI_API_KEY
 
 client = genai.Client(api_key=api_key) # Create a client object for the Gemini API using the provided API key
 
+def build_location_lines(location):
+    """Build prompt lines from the location facts that exist."""
+    lines = []
+
+    name = location.get("name")
+    if name:
+        lines.append(f"- City: {name}")
+
+    country = location.get("country")
+    if country:
+        lines.append(f"- Country: {country}")
+
+    region = location.get("admin1")
+    if region:
+        lines.append(f"-Region: {region}")
+
+    population = location.get("population")
+    if population:
+        lines.append(f"- Population: {population}")
+
+    elevation = location.get("elevation")
+    if elevation:
+        lines.append(f"- Elevation: {elevation} m")
+
+    return" \
+    ".join(lines)
+
 def generate_story(description, temperature, wind_speed, location):
     """Generate a emergency broadcast weather report"""
+    location_lines = build_location_lines(location)
     models = [
         "gemini-flash-lite-latest",
         "gemini-flash-latest",
@@ -27,6 +55,7 @@ def generate_story(description, temperature, wind_speed, location):
                             - Weather: {description}
                             - Temperature: {temperature}°C
                             - Wind speed: {wind_speed} km/h
+                            - Location: {location_lines}
 
                             CORE RULES:
                             1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
@@ -41,6 +70,7 @@ def generate_story(description, temperature, wind_speed, location):
                             10. The weather report should be the horror.
                             11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
                             12. MAXIMUM 100 words.
+                            13. (This is a work of fiction) at the end.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
