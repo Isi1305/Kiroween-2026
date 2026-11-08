@@ -1,0 +1,9 @@
+requests
+python-dotenv
+google-genai
+streamlit
+edge-tts
+numpy
+scipy
+pydub
+audioop-lts; python_version >= "3.13"
