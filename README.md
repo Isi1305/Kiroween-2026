@@ -4,7 +4,7 @@ fake horror emergency broadcasts on Youtube.
 
 > Fictional entertainment, not a real alert
 
-Live demo: [Link App](https://kiroween-2026-gkax9hiqcrw9ltlrf5tjq3.streamlit.app/) 
+Live demo: [App](https://kiroween-2026-gkax9hiqcrw9ltlrf5tjq3.streamlit.app/) 
 (If the app is asleep, click the wake-up button and wait a moment.)
 
 Features 
