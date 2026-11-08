@@ -85,3 +85,16 @@ if city:
         col1.metric("Temperature", f"{temperature} °C")
         col2.metric("Wind", f"{wind_speed} km/h")
         col3.metric("Weather", f"{description}")
+        col4, col5, col6 = st.columns(3)
+
+        humidity = weather_result.get("relative_humidity_2m")
+        if humidity is not None:
+            col4.metric("Humidity", f"{humidity} %")
+
+        apparent_temperature = weather_result.get("apparent_temperature")
+        if apparent_temperature is not None:
+            col5.metric("Feels like", f"{apparent_temperature} °C")
+
+        precipitation = weather_result.get("precipitation")
+        if precipitation is not None:
+            col6.metric("Precipitation", f"{precipitation} mm")
