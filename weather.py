@@ -8,7 +8,7 @@ def get_coordinates(location):
     params = {
         "name": location,
         "count": 1,
-        "language": "de"
+        "language": "en"
     }
 
     response = requests.get(url, params=params) # Send a GET request to the API with the specified parameters
@@ -32,6 +32,26 @@ def get_weather(latitude, longitude):
 
     weather_result = weather_data["current"]
     return weather_result["temperature_2m"], weather_result["weather_code"], weather_result["wind_speed_10m"]
+
+def get_location(town):
+    """Get the location of a town"""
+    # Get the location data from the Open-Meteo API
+    url = "https://geocoding-api.open-meteo.com/v1/search"
+
+    location_params = {
+            "name": town,
+            "count": 1,
+            "language": "en"
+        }
+
+    town_response = requests.get(url, params=location_params) # Send a GET request to the API with the specified parameters
+    town_data = town_response.json()
+
+    if "results" not in town_data:
+        return None
+
+    town_result = town_data["results"][0]
+    return town_result
 
 if __name__ == "__main__":
     latitude, longitude = get_coordinates("Bad Dürkheim")

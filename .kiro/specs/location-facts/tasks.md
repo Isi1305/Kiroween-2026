@@ -3,9 +3,9 @@
 The developer writes the code herself; Kiro explains concepts and reviews (see
 `.kiro/steering/working-style.md`). Tick each task when it is done.
 
-- [ ] 1. Add `get_location` to `weather.py`
-  - [ ] 1.1 Send the geocoding request with `language="en"`
-  - [ ] 1.2 Return the first result as a dict, or `None` if there are no results
+- [x] 1. Add `get_location` to `weather.py`
+  - [x] 1.1 Send the geocoding request with `language="en"`
+  - [x] 1.2 Return the first result as a dict, or `None` if there are no results
   - _Requirements: 1.1, 1.2, 1.3, 2.2_
 
 - [ ] 2. Use the new function in `app.py`
