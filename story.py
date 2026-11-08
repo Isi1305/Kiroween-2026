@@ -91,6 +91,7 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
                             12. MAXIMUM 100 words.
                             13. The facts above are material to choose from. Use only the two or three that make the horror stronger. You do not need to mention all of them.
                             14. Every number you do mention must be exact.
+                            15. The survival rule must never involve blocking breathing, swallowing or inhaling anything, harming oneself or others, or leaving a safe place. Keep it harmless to follow, such as staying inside, closing windows or staying silent.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
