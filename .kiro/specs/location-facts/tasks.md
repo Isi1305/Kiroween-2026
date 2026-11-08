@@ -14,14 +14,14 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [x] 2.3 Pass `location` through `show_warning`
   - _Requirements: 1.3, 2.2_
 
-- [ ] 3. Put the facts into the prompt in `story.py`
+- [x] 3. Put the facts into the prompt in `story.py`
   - [x] 3.1 Add the `location` parameter to `generate_story`
   - [x] 3.2 Write a helper that builds fact lines and skips missing values
   - [x] 3.3 Insert the fact lines and the new rule (use facts naturally, keep numbers exact)
   - _Requirements: 2.1, 3.1, 3.2, 3.3_
 
 - [ ] 4. Credit the data source
-  - [ ] 4.1 Add a short Open-Meteo credit line to the app
+  - [x] 4.1 Add a short Open-Meteo credit line to the app
   - [ ] 4.2 Add the credit to the README when it exists
   - _Requirements: 4.1, 4.2_
 

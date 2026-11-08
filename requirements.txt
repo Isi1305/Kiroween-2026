@@ -1,7 +1,7 @@
 requests
 python-dotenv
 google-genai
-streamlit
+streamlit==1.51.0
 edge-tts
 numpy
 scipy
