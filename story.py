@@ -58,10 +58,14 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
     location_lines = build_location_lines(location)
     weather_lines = build_weather_lines(weather_result)
     models = [
-        "gemini-flash-lite-latest",
+        "gemini-flash-lite-latest"
+        "gemini-3.5-flash-lite",
         "gemini-flash-latest",
+        "gemini-2-flash",
+        "gemini-2-flash-lite",
+        "gemini-2.5-flash",
         "gemini-3.5-flash",
-        "gemini-3.6-flash",
+        "gemini-3.6-flash"
     ]
     story = None # try every model in the list until one works
     for model in models:
