@@ -37,8 +37,8 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [x] 6.2 Add the same statement to the README and the project description later
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 7. Check it manually
-  - [ ] 7.1 Normal town, town without population, nonsense input, special characters
+- [x] 7. Check it manually
+  - [x] 7.1 Normal town, town without population, nonsense input, special characters
   - [x] 7.2 Confirm the broadcast mentions the real town and keeps all numbers exact
   - [x] 7.3 Confirm the fiction notice is visible in the pop-up without scrolling
   - _Requirements: all_
