@@ -1,5 +1,5 @@
 import streamlit as st
-from weather import get_coordinates, get_weather
+from weather import get_coordinates, get_weather, get_location
 from weather_codes import weather_descriptions
 from story import generate_story
 import asyncio
@@ -65,13 +65,19 @@ st.title("Weather Report")
 city = st.text_input("Enter a town") 
 
 if city:
-    latitude, longitude = get_coordinates(city)
-    temperature, weather_code, wind_speed = get_weather(latitude, longitude)
-    description = weather_descriptions[weather_code]
+    location = get_location(city)
 
-    show_warning(description, temperature, wind_speed)
+    if location is None:
+        st.warning("Town not found. Please check the spelling.")
+    else:
+        latitude = location["latitude"]
+        longitude = location["longitude"]
+        temperature, weather_code, wind_speed = get_weather(latitude, longitude)
+        description = weather_descriptions[weather_code]
 
-    col1, col2, col3 = st.columns(3) # three columns next to each other
-    col1.metric("Temperature", f"{temperature} °C")
-    col2.metric("Wind", f"{wind_speed} km/h")
-    col3.metric("Weather", f"{description}")
+        show_warning(description, temperature, wind_speed)
+
+        col1, col2, col3 = st.columns(3) # three columns next to each other
+        col1.metric("Temperature", f"{temperature} °C")
+        col2.metric("Wind", f"{wind_speed} km/h")
+        col3.metric("Weather", f"{description}")

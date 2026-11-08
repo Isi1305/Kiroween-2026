@@ -8,10 +8,10 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [x] 1.2 Return the first result as a dict, or `None` if there are no results
   - _Requirements: 1.1, 1.2, 1.3, 2.2_
 
-- [ ] 2. Use the new function in `app.py`
-  - [ ] 2.1 Call `get_location(city)` and show `st.warning` when it returns `None`
-  - [ ] 2.2 Read latitude and longitude from the dict and call `get_weather`
-  - [ ] 2.3 Pass `location` through `show_warning`
+- [x] 2. Use the new function in `app.py`
+  - [x] 2.1 Call `get_location(city)` and show `st.warning` when it returns `None`
+  - [x] 2.2 Read latitude and longitude from the dict and call `get_weather`
+  - [x] 2.3 Pass `location` through `show_warning`
   - _Requirements: 1.3, 2.2_
 
 - [ ] 3. Put the facts into the prompt in `story.py`
