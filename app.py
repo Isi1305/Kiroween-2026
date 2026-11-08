@@ -49,6 +49,14 @@ def set_background(image_path):
 
 set_background("assets/ghost.jpg")
 
+@st.cache_data(ttl=900)
+def cached_story(description, temperature, wind_speed, location, weather_result):
+    """Returns the story text, or None if every model failed."""
+    story = generate_story(description, temperature, wind_speed, location, weather_result)
+    if story is None:
+        raise RuntimeError("Every model is currently down. Please try again later.")
+    return story
+
 @st.dialog("CIVIL DEFENSE EMERGENCY BROADCAST") # pop up window
 def show_warning(description, temperature, wind_speed, location, weather_result):
     """The warning is shown on screen with audio playing."""
@@ -69,11 +77,6 @@ def show_warning(description, temperature, wind_speed, location, weather_result)
 st.title("Weather Report")
 city = st.text_input("Enter a town") 
 st.caption("Weather and location data by Open-Meteo.com (CC BY 4.0). Data is transformed into a fictional story. [Open-Meteo.com](https://open-meteo.com/)")
-
-@st.cache_data(ttl=900)
-def cached_story(description, temperature, wind_speed, location, weather_result):
-    """Returns the story text, or None if every model failed."""
-    return generate_story(description, temperature, wind_speed, location, weather_result)
 
 if city:
     location = get_location(city)

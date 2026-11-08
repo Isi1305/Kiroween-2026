@@ -58,7 +58,7 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
     location_lines = build_location_lines(location)
     weather_lines = build_weather_lines(weather_result)
     models = [
-        "gemini-flash-lite-latest"
+        "gemini-flash-lite-latest",
         "gemini-3.5-flash-lite",
         "gemini-flash-latest",
         "gemini-3.5-flash",
