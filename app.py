@@ -63,6 +63,7 @@ def show_warning(description, temperature, wind_speed, location):
 
 st.title("Weather Report")
 city = st.text_input("Enter a town") 
+st.caption("[Open-Meteo.com](https://open-meteo.com/)")
 
 if city:
     location = get_location(city)
