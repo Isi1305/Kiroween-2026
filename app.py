@@ -73,8 +73,11 @@ if city:
     else:
         latitude = location["latitude"]
         longitude = location["longitude"]
-        temperature, weather_code, wind_speed = get_weather(latitude, longitude)
+        weather_result = get_weather(latitude, longitude)
+        temperature = weather_result["temperature_2m"]
+        weather_code = weather_result["weather_code"]
         description = weather_descriptions[weather_code]
+        wind_speed = weather_result["wind_speed_10m"]
 
         show_warning(description, temperature, wind_speed, location)
 
