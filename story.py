@@ -18,19 +18,19 @@ def build_location_lines(location):
         lines.append(f"- City: {name}")
 
     country = location.get("country")
-    if country:
+    if country is not None:
         lines.append(f"- Country: {country}")
 
     region = location.get("admin1")
-    if region:
+    if region is not None:
         lines.append(f"-Region: {region}")
 
     population = location.get("population")
-    if population:
+    if population is not None:
         lines.append(f"- Population: {population}")
 
     elevation = location.get("elevation")
-    if elevation:
+    if elevation is not None:
         lines.append(f"- Elevation: {elevation} m")
 
     return chr(10).join(lines)
@@ -40,11 +40,11 @@ def build_weather_lines(weather_result):
     weather_lines = []
 
     apparent_temperature = weather_result.get("apparent_temperature")
-    if apparent_temperature:
+    if apparent_temperature is not None:
         weather_lines.append(f"- Feels like: {apparent_temperature} °C")
 
     humidity = weather_result.get("relative_humidity_2m")
-    if humidity:
+    if humidity is not None:
         weather_lines.append(f"- Humidity: {humidity} %")
 
     precipitation = weather_result.get("precipitation")
@@ -89,7 +89,7 @@ def generate_story(description, temperature, wind_speed, location, weather_resul
                             10. The weather report should be the horror.
                             11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
                             12. MAXIMUM 100 words.
-                            13. The facts below are material to choose from. Use only the two or three that make the horror stronger. You do not need to mention all of them.
+                            13. The facts above are material to choose from. Use only the two or three that make the horror stronger. You do not need to mention all of them.
                             14. Every number you do mention must be exact.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.

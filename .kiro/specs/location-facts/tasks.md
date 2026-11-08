@@ -40,7 +40,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
 - [ ] 7. Check it manually
   - [ ] 7.1 Normal town, town without population, nonsense input, special characters
   - [x] 7.2 Confirm the broadcast mentions the real town and keeps all numbers exact
-  - [ ] 7.3 Confirm the fiction notice is visible in the pop-up without scrolling
+  - [x] 7.3 Confirm the fiction notice is visible in the pop-up without scrolling
   - _Requirements: all_
 
 - [ ] 8. Optional: try property-based testing (PBT)

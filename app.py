@@ -79,7 +79,7 @@ if city:
         description = weather_descriptions[weather_code]
         wind_speed = weather_result["wind_speed_10m"]
 
-        show_warning(description, temperature, wind_speed, location)
+        show_warning(description, temperature, wind_speed, location, weather_result)
 
         col1, col2, col3 = st.columns(3) # three columns next to each other
         col1.metric("Temperature", f"{temperature} °C")
