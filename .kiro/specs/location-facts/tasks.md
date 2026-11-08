@@ -29,7 +29,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [x] 5.1 Look up the exact Open-Meteo variable names (humidity, feels-like, precipitation)
   - [x] 5.2 Decide: return a dict from `get_weather` and update the callers accordingly
   - [x] 5.3 Request the extra values and show them as tiles; skip missing ones
-  - [ ] 5.4 Add the values to the prompt, numbers kept exact
+  - [x] 5.4 Add the values to the prompt, numbers kept exact
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
 
 - [x] 6. Fiction notice

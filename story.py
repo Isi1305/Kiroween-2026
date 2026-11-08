@@ -35,9 +35,28 @@ def build_location_lines(location):
 
     return chr(10).join(lines)
 
-def generate_story(description, temperature, wind_speed, location):
+def build_weather_lines(weather_result):
+    """Build prompt lines from the weather facts that exist."""
+    weather_lines = []
+
+    apparent_temperature = weather_result.get("apparent_temperature")
+    if apparent_temperature:
+        weather_lines.append(f"- Feels like: {apparent_temperature} °C")
+
+    humidity = weather_result.get("relative_humidity_2m")
+    if humidity:
+        weather_lines.append(f"- Humidity: {humidity} %")
+
+    precipitation = weather_result.get("precipitation")
+    if precipitation is not None:
+        weather_lines.append(f"- Precipitation: {precipitation} mm")
+
+    return chr(10).join(weather_lines)
+
+def generate_story(description, temperature, wind_speed, location, weather_result):
     """Generate a emergency broadcast weather report"""
     location_lines = build_location_lines(location)
+    weather_lines = build_weather_lines(weather_result)
     models = [
         "gemini-flash-lite-latest",
         "gemini-flash-latest",
@@ -55,6 +74,7 @@ def generate_story(description, temperature, wind_speed, location):
                             - Temperature: {temperature}°C
                             - Wind speed: {wind_speed} km/h
                             {location_lines}
+                            {weather_lines}
 
                             CORE RULES:
                             1. The weather itself MUST be the primary threat or the trigger of the horror. It must be impossible to separate the horror from the actual weather conditions.
@@ -69,7 +89,8 @@ def generate_story(description, temperature, wind_speed, location):
                             10. The weather report should be the horror.
                             11. **CIVIL DEFENSE EMERGENCY BROADCAST:** should be at the start.
                             12. MAXIMUM 100 words.
-                            13. Use the location facts naturally in the report and keep every number exact.
+                            13. The facts below are material to choose from. Use only the two or three that make the horror stronger. You do not need to mention all of them.
+                            14. Every number you do mention must be exact.
 
                             IMPORTANT: Do not simply mention the weather. MAKE THE WEATHER THE MONSTER.
 
