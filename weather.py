@@ -24,14 +24,14 @@ def get_weather(latitude, longitude):
     forecast_params = {
         "latitude": latitude,
         "longitude": longitude,
-        "current": "temperature_2m,weather_code,wind_speed_10m"
+        "current": "temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature,precipitation"
     }
 
     forecast_response = requests.get(url, params=forecast_params)
     weather_data = forecast_response.json()
 
     weather_result = weather_data["current"]
-    return weather_result["temperature_2m"], weather_result["weather_code"], weather_result["wind_speed_10m"]
+    return weather_result
 
 def get_location(town):
     """Get the location of a town"""
@@ -55,9 +55,15 @@ def get_location(town):
 
 if __name__ == "__main__":
     latitude, longitude = get_coordinates("Bad Dürkheim")
-    temperature, weather_code, wind_speed = get_weather(latitude, longitude)
+    weather_result = get_weather(latitude, longitude)
+    temperature = weather_result["temperature_2m"]
+    weather_code = weather_result["weather_code"]
+    description = weather_descriptions[weather_code]
+    wind_speed = weather_result["wind_speed_10m"]
+
     print(f"Temperatur: {temperature} °C, Wind: {wind_speed} km/h, Code: {weather_code}")
 
 
     description = weather_descriptions[weather_code]
     print(f"Weather description: {description}")
+    print(weather_result)
