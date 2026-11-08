@@ -25,7 +25,7 @@ def radio_filter(voice):
         voice = voice.overlay(noise)
         return voice
     except Exception:
-        print(f"Radio filter failed: {e}")
+        print(f"Radio filter failed.")
         return voice # Fallback: unfiltered voice
 
 def build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3"):
