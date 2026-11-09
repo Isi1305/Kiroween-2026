@@ -4,7 +4,7 @@ fake horror emergency broadcasts on Youtube.
 
 > Fictional entertainment, not a real alert
 
-Live demo:
+Live demo: > The link to the App will be here in February.
 (If the app is asleep, click the wake-up button and wait a moment.)
 (The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
 
