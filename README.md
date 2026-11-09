@@ -5,9 +5,8 @@ fake horror emergency broadcasts on Youtube.
 > Fictional entertainment, not a real alert
 
 > Live demo: The link to the App will be here in February.
-
-> (If the app is asleep, click the wake-up button and wait a moment.)
-> (The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
+(If the app is asleep, click the wake-up button and wait a moment.)
+(The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
 
 Features 
 - Real-time weather for any city. Enter a city name, and the app retrieves the actual temperature, wind, and weather conditions for that location.
