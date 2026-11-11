@@ -138,8 +138,8 @@ if city:
 
         st.markdown(
             f"""
-            <div style="opacity:0.6; font-size:0.85rem;">Current conditions</div>
-            <div style="font-size:1.75rem; font-weight:600;">{description}</div>
+            <div style="font-size:0.875rem;">Current conditions</div>
+            <div style="font-size:1.75rem; font-weight:600; margin-bottom:1rem;">{description}</div>
             """,
             unsafe_allow_html=True,
         )
