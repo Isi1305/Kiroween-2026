@@ -4,7 +4,8 @@ fake horror emergency broadcasts on Youtube.
 
 > Fictional entertainment, not a real alert
 
-Live demo: [App](https://kiroween-2026-gkax9hiqcrw9ltlrf5tjq3.streamlit.app/) 
+> Live demo: The link to the App will be here in February.
+
 (If the app is asleep, click the wake-up button and wait a moment.)
 (The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
 
