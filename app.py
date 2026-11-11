@@ -136,8 +136,13 @@ if city:
 
         show_warning(description, temperature, wind_speed, location, weather_result)
 
-        st.caption("Current conditions:")
-        st.subheader("Weaher conditons", f"{description}")
+        st.markdown(
+            f"""
+            <div style="opacity:0.6; font-size:0.85rem;">Current conditions</div>
+            <div style="font-size:1.75rem; font-weight:600;">{description}</div>
+            """,
+            unsafe_allow_html=True,
+        )
 
         col1, col2, _ = st.columns(3) # two columns next to each other
         col1.metric("Temperature", f"{temperature} °C")
