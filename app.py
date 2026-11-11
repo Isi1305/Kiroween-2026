@@ -53,7 +53,7 @@ def set_background(image_path):
         <style>
         .stApp::after {{
         content: "";
-        position: fixed
+        position: fixed;
         inset: 0;
         pointer-events: none;
         z-index: 1;
