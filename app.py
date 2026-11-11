@@ -135,10 +135,13 @@ if city:
 
         show_warning(description, temperature, wind_speed, location, weather_result)
 
-        col1, col2, col3 = st.columns(3) # three columns next to each other
+        st.caption("Current conditions:")
+        st.subheader(description)
+
+        col1, col2, _ = st.columns(3) # two columns next to each other
         col1.metric("Temperature", f"{temperature} °C")
         col2.metric("Wind", f"{wind_speed} km/h")
-        col3.metric("Weather", f"{description}")
+        
         col4, col5, col6 = st.columns(3)
 
         apparent_temperature = weather_result.get("apparent_temperature")
