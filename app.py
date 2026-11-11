@@ -45,7 +45,28 @@ def set_background(image_path):
     </style>
     """,
     unsafe_allow_html=True,
-)
+    )
+
+    # scanlines
+    st.markdown(
+        f"""
+        <style>
+        st.App::after {{
+        content: "";
+        position: fixed
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.25) 0 1px,
+            transparent 1px 3px
+        );
+        }}
+        </style>
+        """
+    )
+
 
 set_background("assets/ghost.jpg")
 

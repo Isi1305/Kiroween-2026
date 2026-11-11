@@ -11,7 +11,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - _Requirements: 4.1, 4.2, 4.3, 4.4_
 
 - [ ] 2. CRT look behind the pop-up (`app.py`)
-  - [ ] 2.1 Add a CSS overlay (`.stApp::after`) with scanlines, `pointer-events: none`
+  - [x] 2.1 Add a CSS overlay (`.stApp::after`) with scanlines, `pointer-events: none`
   - [ ] 2.2 Add the low-opacity noise texture
   - [ ] 2.3 Check layering: pop-up text crisp, typing and clicking still work
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 1.1, 1.2, 5.1_
