@@ -64,8 +64,8 @@ def set_background(image_path):
         );
         }}
         </style>
-        """
-        unsafe_allow_html=True
+        """,
+        unsafe_allow_html=True,
     )
 
 
