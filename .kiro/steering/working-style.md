@@ -15,5 +15,12 @@ She has a graphic design / game design background and a strong eye for visuals.
 - Be honest when something cannot be tested or verified from the sandbox.
 - Answer in German in chat; keep code and comments in English.
 
+- When she shares an error or a screenshot, name the likely cause first and say how sure you are.
+  Never present a guess as a fact.
+- Do not invent Kiro usage. The write-up for the hackathon must describe only what was really done
+  (Kiro Web in vibe mode, steering, specs, one hook).
+- Respect her energy: she studies in parallel, so offer small, finishable steps and a clear stopping
+  point.
+
 ## Project state notes
 - The sandbox has no open internet, so APIs cannot be run there. She runs the app locally.
