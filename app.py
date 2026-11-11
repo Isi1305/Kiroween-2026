@@ -90,6 +90,7 @@ def set_background(image_path):
 
 set_background("assets/ghost.jpg")
 
+@st.cache_data(ttl=900, show_spinner=False)
 @st.cache_data(ttl=900)
 def cached_story(description, temperature, wind_speed, location, weather_result):
     """Returns the story text, or None if every model failed."""
@@ -136,7 +137,7 @@ if city:
         show_warning(description, temperature, wind_speed, location, weather_result)
 
         st.caption("Current conditions:")
-        st.subheader(description)
+        st.subheader("Weaher conditons", f"{description}")
 
         col1, col2, _ = st.columns(3) # two columns next to each other
         col1.metric("Temperature", f"{temperature} °C")
