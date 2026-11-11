@@ -51,7 +51,7 @@ def set_background(image_path):
     st.markdown(
         f"""
         <style>
-        st.App::after {{
+        .stApp::after {{
         content: "";
         position: fixed
         inset: 0;
@@ -65,6 +65,7 @@ def set_background(image_path):
         }}
         </style>
         """
+        unsafe_allow_html=True
     )
 
 
