@@ -9,6 +9,12 @@ fake horror emergency broadcasts on Youtube.
 (If the app is asleep, click the wake-up button and wait a moment.)
 (The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
 
+<img width="1862" height="912" alt="Screenshot 2026-11-11 160549" src="https://github.com/user-attachments/assets/ee1a9574-8b09-49d9-9f2e-743be795e764" />
+<img width="1872" height="910" alt="Screenshot 2026-11-11 160940" src="https://github.com/user-attachments/assets/34584064-0b1a-467e-bc80-cef9fe865a63" />
+<img width="1868" height="911" alt="Screenshot 2026-11-11 160951" src="https://github.com/user-attachments/assets/f7ba1c45-b5dd-498b-9a21-41411107326e" />
+<img width="1869" height="909" alt="Screenshot 2026-11-11 163310" src="https://github.com/user-attachments/assets/7f53f72f-47ca-4c10-8a8d-56fa8b2d9ccb" />
+
+
 Features 
 - Real-time weather for any city. Enter a city name, and the app retrieves the actual temperature, wind, and weather conditions for that location.
 - The announcement knows the location. The city, country, region, population, and elevation are incorporated into the story using real-world data.
