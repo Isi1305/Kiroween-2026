@@ -91,7 +91,6 @@ def set_background(image_path):
 set_background("assets/ghost.jpg")
 
 @st.cache_data(ttl=900, show_spinner=False)
-@st.cache_data(ttl=900)
 def cached_story(description, temperature, wind_speed, location, weather_result):
     """Returns the story text, or None if every model failed."""
     story = generate_story(description, temperature, wind_speed, location, weather_result)
