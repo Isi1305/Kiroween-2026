@@ -86,6 +86,22 @@ def set_background(image_path):
         unsafe_allow_html=True,
     )
 
+    # glitch
+    # plays glitch for 2 seconds once
+    st.markdown(
+        """
+        <style>
+        @keyframes glitch {
+        0% {opacity: 1;} 
+        50% {opacity: 0.1;}
+        100% {opacity: 1;}
+        }
+        .stApp::after {animation: glitch 2s 1;}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 set_background("assets/ghost.jpg")
 
