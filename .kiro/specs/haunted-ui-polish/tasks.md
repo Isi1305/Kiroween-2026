@@ -20,7 +20,7 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [ ] 3.1 Write the `@keyframes` animation (one second, at most three changes per second)
   - [ ] 3.2 Start it when `show_warning` opens the dialog
   - [ ] 3.3 Add the `prefers-reduced-motion` rule
-  - [ ] 3.4 Try it in the browser; if unreliable, apply the fallback (constant noise only)
+  - [x] 3.4 Try it in the browser; if unreliable, apply the fallback (constant noise only)
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
 - [ ] 4. Check everything
