@@ -14,6 +14,7 @@ fake horror emergency broadcasts on Youtube.
 <img width="1863" height="909" alt="Screenshot 2026-11-13 135113" src="https://github.com/user-attachments/assets/5c21ac8d-fe5b-4ba9-9a0b-7c3393b90b1b" />
 <img width="1867" height="909" alt="Screenshot 2026-11-13 135120" src="https://github.com/user-attachments/assets/2b9c3221-cd9c-41e6-89be-39f3b5b586f4" />
 
+
 Features 
 - Real-time weather for any city. Enter a city name, and the app retrieves the actual temperature, wind, and weather conditions for that location.
 - The announcement knows the location. The city, country, region, population, and elevation are incorporated into the story using real-world data.
