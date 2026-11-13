@@ -29,8 +29,8 @@ The developer writes the code herself; Kiro explains concepts and reviews (see
   - [x] 3.4 Try it in the browser; apply the fallback (constant noise only) — done
   - _Requirements: 3.5 (fallback applies)_
 
-- [ ] 4. Check everything
-  - [ ] 4.1 Run the whole flow: town -> pop-up -> broadcast -> close (no glitch step any more)
-  - [ ] 4.2 Not needed (no animation to switch off)
-  - [ ] 4.3 Take screenshots for the README and the video
+- [x] 4. Check everything
+  - [x] 4.1 Run the whole flow: town -> pop-up -> broadcast -> close (no glitch step any more)
+  - [x] 4.2 Not needed (no animation to switch off)
+  - [x] 4.3 Take screenshots for the README and the video
   - _Requirements: all_
