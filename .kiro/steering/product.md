@@ -29,7 +29,8 @@ The weather itself is the monster; the report is the horror. No characters.
   quiet on purpose. Principle: quiet and cold in the background, loud and red only for the alarm
 - The pop-up stays as it is (hazard stripes, red border); a large "EMERGENCY" title and alarm icon
   were considered and dropped
-- Still open: a short glitch burst when the warning opens (see the haunted-ui-polish spec)
+- A glitch burst when the warning opens was tried and dropped: it did not look right, so the page
+  stays calm (see the haunted-ui-polish spec)
 
 ## Story rules (see story.py for the exact prompt)
 - Weather is the primary threat, with one disturbing survival rule
