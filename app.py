@@ -86,22 +86,6 @@ def set_background(image_path):
         unsafe_allow_html=True,
     )
 
-    # glitch
-    # plays glitch for 2 seconds once
-    st.markdown(
-        """
-        <style>
-        @keyframes glitch {
-        0% {opacity: 1;} 
-        50% {opacity: 0.1;}
-        100% {opacity: 1;}
-        }
-        .stApp::after {animation: glitch 2s 1;}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
 
 set_background("assets/ghost.jpg")
 
@@ -125,6 +109,27 @@ def show_warning(description, temperature, wind_speed, location, weather_result)
         
         asyncio.run(make_speech(story)) # make the audio
         broadcast = build_broadcast(voice_path="warning.mp3", output_path="broadcast.mp3")
+
+        # glitch 1 second, only pop-up
+        st.markdown(
+            """
+            <style>
+            @keyframes glitch {
+                0%, 100% { transform: translateX(0); filter: none; }
+                20% { transform: translateX(-6px);
+                    filter: drop-shadow(4px 0 #ff0040) drop-shadow(-4px 0 #00e5ff); }
+                40% { transform: translateX(0); filter: none; }
+                60% { transform: translateX(5px);
+                    filter: drop-shadow(-4px 0 #ff0040) drop-shadow(4px 0 #00e5ff); }
+            }
+            div[role="dialog"] { animation: glitch 0.9s 1; }
+            @media (prefers-reduced-motion: reduce) {
+                div[role="dialog"] { animation: none; }
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
     st.caption("Fictional entertainment, not a real alert")
     st.write(story)
