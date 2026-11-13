@@ -9,10 +9,10 @@ fake horror emergency broadcasts on Youtube.
 (If the app is asleep, click the wake-up button and wait a moment.)
 (The app uses the free version of Gemini API so it can only generate a limited amount of reports.)
 
-<img width="1862" height="912" alt="Screenshot 2026-11-11 160549" src="https://github.com/user-attachments/assets/ee1a9574-8b09-49d9-9f2e-743be795e764" />
-<img width="1872" height="910" alt="Screenshot 2026-11-11 160940" src="https://github.com/user-attachments/assets/34584064-0b1a-467e-bc80-cef9fe865a63" />
-<img width="1868" height="911" alt="Screenshot 2026-11-11 160951" src="https://github.com/user-attachments/assets/f7ba1c45-b5dd-498b-9a21-41411107326e" />
-<img width="1869" height="909" alt="Screenshot 2026-11-11 163310" src="https://github.com/user-attachments/assets/7f53f72f-47ca-4c10-8a8d-56fa8b2d9ccb" />
+<img width="1873" height="905" alt="Screenshot 2026-11-13 135025" src="https://github.com/user-attachments/assets/8b88b98c-4cac-4eac-baa7-73a39d40344c" />
+<img width="1865" height="907" alt="Screenshot 2026-11-13 135051" src="https://github.com/user-attachments/assets/48a26faa-3e20-4017-b055-5b32434d0e60" />
+<img width="1863" height="909" alt="Screenshot 2026-11-13 135113" src="https://github.com/user-attachments/assets/5c21ac8d-fe5b-4ba9-9a0b-7c3393b90b1b" />
+<img width="1867" height="909" alt="Screenshot 2026-11-13 135120" src="https://github.com/user-attachments/assets/2b9c3221-cd9c-41e6-89be-39f3b5b586f4" />
 
 
 Features 
